@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#191916">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Who Am I Online? An interactive editorial about social media, identity, and the relationships behind the screen. A digital story by Avi.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="WHO AM I ONLINE? — The internet only knows a version of you.">
+  <meta property="og:description" content="Look in the mirror. Remix the feed. Read between the messages. Choose your own digital code.">
+  <meta property="og:image" content="./assets/cover.svg">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js" defer></script>
+  <script src="./app.js" defer></script>
+  <title>WHO AM I ONLINE? — An interactive digital story by Avi</title>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to the story</a>
+  <div id="reading-track" class="reading-track" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="reading-fill"></span></div>
+  <div class="pointer-light" aria-hidden="true"></div>
+  <header class="header" id="top">
+    <a class="wordmark" href="#top" aria-label="Who Am I Online? Back to top"><span class="mark-eye" aria-hidden="true">◉</span> WHO<span class="wordmark-orange">.</span>AM<span class="wordmark-orange">.</span>I<span class="wordmark-orange">?</span></a>
+    <nav id="main-nav" aria-label="Story chapters">
+      <a href="#mirror">01 MIRROR</a><a href="#feed">02 FEED</a><a href="#messages">03 MESSAGES</a><a href="#code">04 YOUR CODE</a>
+    </nav>
+    <div class="header-actions"><button id="sound-button" class="sound-button" type="button" aria-pressed="false" aria-label="Turn interface sounds on"><span class="sound-icon" aria-hidden="true">♫</span> <span class="sound-status">SOUND OFF</span></button><button id="menu-button" class="menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button></div>
+  </header>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile chapter navigation" hidden><a href="#mirror">01 / The Mirror</a><a href="#feed">02 / The Feed</a><a href="#receipts">03 / The Evidence</a><a href="#messages">04 / Messages</a><a href="#code">05 / Your Code</a></nav>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-lines" aria-hidden="true"></div>
+      <div class="hero-topbar mono"><span><span class="live-indicator" aria-hidden="true"></span> AN INTERACTIVE STORY ABOUT YOU</span><span>ISSUE 001 — INTERNET / IDENTITY</span></div>
+      <div class="hero-grid">
+        <div class="hero-type">
+          <p class="kicker"><span class="kicker-line"></span> YOUR FACE. YOUR FEED. YOUR STORY?</p>
+          <h1 id="hero-heading"><span class="hero-h1-line">WHO AM</span><span class="hero-h1-line">I <em>ONLINE</em><span class="hero-question">?</span></span></h1>
+          <p class="hero-deck">The internet knows your highlights.<br>But does it know <i>you?</i></p>
+          <div class="hero-cta-row"><a class="primary-button magnetic" href="#mirror">ENTER THE STORY <span aria-hidden="true">↗</span></a><button id="narrate-button" type="button" class="narrate-button" aria-pressed="false" aria-label="Listen to a short spoken introduction">▶ HEAR THE INTRO</button><span class="mono small-meta">5 CHAPTERS / ~6 MINUTES<br>NO LOGIN. NO TRACKING.</span></div>
+        </div>
+        <div class="hero-art" aria-label="Abstract illustrated profile portrait duplicated as a bright social-media persona and a quieter private self" role="img">
+          <div class="hero-art-frame"><img src="./assets/identity-poster.svg" alt="" aria-hidden="true"><span class="sticker sticker-top">PUBLIC VERSION <b>↗</b></span><span class="sticker sticker-bottom">PRIVATE VERSION <b>↘</b></span></div>
+          <div class="hero-art-annotation mono" aria-hidden="true"><span>IMAGE 01 / 02</span><span>REALITY ISN'T A FILTER.</span></div>
+          <div class="hero-orbit orbit-a" aria-hidden="true"></div><div class="hero-orbit orbit-b" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="hero-bottom mono"><a href="#mirror" aria-label="Scroll to the mirror chapter">SCROLL TO LOOK CLOSER <span aria-hidden="true">↓</span></a><span>MADE FOR REAL PEOPLE, NOT PERFECT PROFILES.</span><span>CREATED BY AVI / 2026</span></div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="ticker-inner"><span>YOU ARE MORE THAN WHAT YOU POST <b>✳</b> THE FEED IS NOT THE WHOLE STORY <b>✳</b></span><span>YOU ARE MORE THAN WHAT YOU POST <b>✳</b> THE FEED IS NOT THE WHOLE STORY <b>✳</b></span></div></div>
+
+    <section class="chapter mirror-section" id="mirror" aria-labelledby="mirror-heading">
+      <div class="chapter-label"><span>01 / THE MIRROR</span><span>DRAG TO REVEAL</span></div>
+      <div class="mirror-head"><div><p class="mini-kicker">THE FIRST EXPERIMENT</p><h2 id="mirror-heading" class="big-heading">SAME PERSON.<br><em>DIFFERENT</em> <span class="squiggle-word">STORY.</span></h2></div><div class="mirror-explain"><span class="mono accent-mono">A FACE IS NOT A FULL LIFE.</span><p>What gets posted is a choice. What gets left out is a life. Drag the divider to explore the distance between a carefully chosen moment and everything around it.</p></div></div>
+      <div class="mirror-device" id="mirror-device">
+        <div class="device-topline"><span><span class="red-dot"></span> THE MIRROR / INTERACTIVE</span><span>02 VERSIONS · 01 PERSON</span></div>
+        <div class="mirror-stage" id="mirror-stage">
+          <img class="mirror-art mirror-life" src="./assets/mirror-life.svg" alt="Illustration of a quiet ordinary day: a person in a bedroom with unfinished schoolwork, a plant, a basketball, messages and everyday clutter" draggable="false">
+          <div class="mirror-curated-window" id="mirror-curated-window"><img class="mirror-art mirror-curated" src="./assets/mirror-curated.svg" alt="Illustration of a curated social post: the same person with stylised lights, hearts, a neat frame and a perfect-looking scene" draggable="false"></div>
+          <div class="mirror-handle" id="mirror-handle" aria-hidden="true"><span>↔</span></div>
+          <label class="visually-hidden" for="mirror-slider">Reveal the carefully curated social-media view compared with the fuller everyday scene</label>
+          <input id="mirror-slider" class="mirror-slider" type="range" min="0" max="100" value="50">
+          <div class="mirror-stamp stamp-curated">WHAT GETS POSTED ↖</div><div class="mirror-stamp stamp-life">WHAT YOU DON'T SEE ↗</div>
+        </div>
+        <div class="device-footer mono"><span>← ONLINE EDIT</span><span>DRAG THE DIVIDER OR USE ARROW KEYS</span><span>OFF-CAMERA →</span></div>
+      </div>
+      <div class="mirror-thought"><div class="thought-tag">THINK ABOUT IT ↗</div><p>When you compare your <em>whole day</em> with someone else's <em>best fifteen seconds</em>, are you even comparing the same thing?</p><button id="thought-reveal" class="outline-button" type="button" aria-expanded="false" aria-controls="thought-answer">READ THE TAKEAWAY <span>+</span></button><p id="thought-answer" class="thought-answer" hidden>Not everything online is staged, and sharing your wins can be positive. The important part is remembering that one post rarely tells a complete story.</p></div>
+    </section>
+
+    <section class="chapter feed-section" id="feed" aria-labelledby="feed-heading">
+      <div class="chapter-label chapter-label-dark"><span>02 / THE FEED</span><span>CHOOSE WHAT YOU SEE</span></div>
+      <div class="feed-header"><div><p class="mini-kicker light-kicker">YOU'RE IN THE DRIVER'S SEAT (SORT OF).</p><h2 id="feed-heading" class="big-heading light-heading">THE FEED<br>IS A <em>FILTER.</em></h2></div><div class="feed-intro"><p>An algorithm doesn't know your entire identity. It ranks signals. This is a simplified, fictional feed experiment—not a reproduction of any platform's real algorithm.</p><div class="mono feed-caveat">CHOOSE A LENS TO REORDER THE SAME POSTS.</div></div></div>
+      <div class="feed-workbench" id="feed-workbench">
+        <div class="feed-controls" role="group" aria-label="Choose the feed sorting lens"><span class="mono">WHAT SHOULD THE FEED PRIORITISE?</span><button type="button" class="feed-filter selected" data-mode="attention" aria-pressed="true">↗ ATTENTION</button><button type="button" class="feed-filter" data-mode="connection" aria-pressed="false">♡ CONNECTION</button><button type="button" class="feed-filter" data-mode="creativity" aria-pressed="false">✳ CREATIVITY</button></div>
+        <div class="feed-display"><div class="feed-sidebar"><div class="feed-side-title mono">YOUR EXPERIMENT / 002</div><h3 id="feed-lens-name">The attention lens.</h3><p id="feed-lens-copy">Big reactions move to the front. The most visible thing is not always the most meaningful.</p><div class="lens-key"><span><i class="key-dot"></i> ORDERED BY AN ILLUSTRATIVE RULE</span><span>FICTIONAL POSTS / NO USER DATA</span></div></div><div class="post-grid" id="post-grid" aria-live="polite"></div></div>
+      </div>
+      <div class="feed-bottom mono"><span>NO, YOUR FEED ISN'T YOUR PERSONALITY.</span><span>IT IS A WINDOW WITH AN EDITOR.</span><span>↓ KEEP GOING</span></div>
+    </section>
+
+    <section class="chapter receipts-section" id="receipts" aria-labelledby="receipts-heading">
+      <div class="chapter-label"><span>03 / THE RECEIPTS</span><span>REAL DATA, NOT JUST OPINIONS</span></div>
+      <div class="receipts-lead"><p class="mini-kicker">THE GOOD AND THE COMPLICATED</p><h2 id="receipts-heading" class="big-heading">BOTH THINGS<br>CAN BE <em>TRUE.</em></h2><p>Social media can help people feel connected and creative. It can also create pressure. These findings describe US teens in one survey—not every teen and not a cause-and-effect experiment.</p></div>
+      <div class="statistics" aria-label="Selected results from a 2025 Pew Research Center report based on a September to October 2024 survey of United States teenagers">
+        <article class="stat-card stat-card-connect"><div class="stat-meta mono"><span>01 / CONNECTION</span><span>POSITIVE EXPERIENCE</span></div><strong class="stat-number" data-count="74">74<span>%</span></strong><div class="stat-meter"><span></span></div><p>say social media makes them feel <b>more connected</b> to what's happening in friends' lives.</p><span class="mono tiny-stat">US TEENS / PEW RESEARCH / 2025</span></article>
+        <article class="stat-card stat-card-create"><div class="stat-meta mono"><span>02 / CREATIVITY</span><span>POSITIVE EXPERIENCE</span></div><strong class="stat-number" data-count="63">63<span>%</span></strong><div class="stat-meter"><span></span></div><p>say social media provides a place to <b>show their creative side.</b></p><span class="mono tiny-stat">US TEENS / PEW RESEARCH / 2025</span></article>
+        <article class="stat-card stat-card-pressure"><div class="stat-meta mono"><span>03 / PRESSURE</span><span>DIFFICULT EXPERIENCE</span></div><strong class="stat-number" data-count="31">31<span>%</span></strong><div class="stat-meter"><span></span></div><p>say social media makes them feel <b>pressure to post popular content.</b></p><span class="mono tiny-stat">US TEENS / PEW RESEARCH / 2025</span></article>
+      </div>
+      <p class="source-note">Source: Pew Research Center, <a href="https://www.pewresearch.org/internet/2025/04/22/teens-social-media-and-mental-health/" target="_blank" rel="noopener noreferrer">“Social Media and Teens' Mental Health” (22 April 2025) ↗</a>. Online survey of 1,391 US teens and parents, conducted 18 September–10 October 2024. The percentages above refer to surveyed teenagers' responses.</p>
+      <div class="age-note"><div class="age-note-symbol" aria-hidden="true">i</div><p><b>In Australia:</b> Since 10 December 2025, certain age-restricted social media services must take steps to prevent under-16s from having accounts. This educational simulation never requires a social media account. <a href="https://www.esafety.gov.au/about-us/industry-regulation/social-media-age-restrictions" target="_blank" rel="noopener noreferrer">Read eSafety's explanation ↗</a></p></div>
+    </section>
+
+    <section class="chapter messages-section" id="messages" aria-labelledby="messages-heading">
+      <div class="chapter-label chapter-label-dark"><span>04 / BETWEEN THE LINES</span><span>YOUR CHOICE CHANGES THE CONVERSATION</span></div>
+      <div class="message-head"><div><p class="mini-kicker light-kicker">THE MESSAGE YOU DIDN'T HEAR</p><h2 id="messages-heading" class="big-heading light-heading">TEXT HAS<br>NO <em>TONE.</em></h2></div><p>A two-letter reply. A delayed response. A screenshot out of context. Small messages can cause big misunderstandings. Try two fictional conversations and see what different responses might open up.</p></div>
+      <div class="conversation-lab"><div class="conversation-guide"><div class="mono stage-label">CONVERSATION LAB / 004</div><div class="conversation-scenarios" role="group" aria-label="Choose a fictional conversation"><button class="scenario-tab active" type="button" data-scenario="silence" aria-pressed="true"><span>01 / THE SHORT REPLY</span><b>“k.”</b></button><button class="scenario-tab" type="button" data-scenario="photo" aria-pressed="false"><span>02 / THE GROUP PHOTO</span><b>“can you delete that?”</b></button></div><div class="conversation-note">Nothing here is a diagnosis or a prediction of how a real person will react. It's a chance to practise thinking beyond your first assumption.</div></div>
+        <div class="chat-phone"><div class="chat-phone-top"><span class="chat-back">‹</span><div class="chat-avatar" aria-hidden="true">J</div><div><b id="chat-person">Jordan</b><span>fictional chat simulation</span></div><span class="chat-dots">•••</span></div><div class="chat-messages" id="chat-messages" aria-live="polite"></div><div class="chat-choices" id="chat-choices"><span class="mono">HOW WOULD YOU RESPOND?</span><div id="chat-buttons" class="chat-buttons"></div></div><div id="chat-feedback" class="chat-feedback" aria-live="polite" hidden></div><button type="button" id="chat-reset" class="chat-reset" hidden>↺ TRY A DIFFERENT RESPONSE</button><div class="chat-phone-bottom" aria-hidden="true"><div></div></div></div>
+      </div>
+    </section>
+
+    <section class="chapter code-section" id="code" aria-labelledby="code-heading">
+      <div class="chapter-label"><span>05 / YOUR CODE</span><span>MAKE SOMETHING USEFUL</span></div>
+      <div class="code-head"><div><p class="mini-kicker">DON'T JUST LEAVE WITH A TAKEAWAY.</p><h2 id="code-heading" class="big-heading">WRITE YOUR<br><em>OWN</em> RULES.</h2></div><p>You don't need to be a perfect digital citizen. Choose three small habits that make online spaces better for you and the people around you.</p></div>
+      <div class="code-builder"><div class="code-choices"><div class="mono code-subheading">CHOOSE EXACTLY THREE / <span id="selected-count">0</span> OF 3 PICKED</div><div id="principle-options" class="principle-options" role="group" aria-label="Choose three digital habits"><button type="button" class="principle" data-rule="Ask before sharing someone else's photo." aria-pressed="false"><span>01</span><b>ASK FIRST</b><span class="rule-plus">+</span><small>Consent before sharing.</small></button><button type="button" class="principle" data-rule="Check in before assuming a friend's tone." aria-pressed="false"><span>02</span><b>READ WITH CARE</b><span class="rule-plus">+</span><small>Messages miss context.</small></button><button type="button" class="principle" data-rule="Remember that a highlight isn't a whole life." aria-pressed="false"><span>03</span><b>SEE THE WHOLE PERSON</b><span class="rule-plus">+</span><small>Posts are fragments.</small></button><button type="button" class="principle" data-rule="Make time for friendships beyond the feed." aria-pressed="false"><span>04</span><b>GO BEYOND THE FEED</b><span class="rule-plus">+</span><small>Connection has many forms.</small></button><button type="button" class="principle" data-rule="Give myself permission to pause before replying." aria-pressed="false"><span>05</span><b>TAKE A BEAT</b><span class="rule-plus">+</span><small>Not every reply is urgent.</small></button><button type="button" class="principle" data-rule="Choose what I share, not just what gets likes." aria-pressed="false"><span>06</span><b>BE INTENTIONAL</b><span class="rule-plus">+</span><small>My values, not metrics.</small></button></div><p id="code-help" class="code-help" role="status">Choose three ideas to generate your manifesto.</p></div><div class="code-output-wrap"><div class="manifesto" id="manifesto" aria-label="Preview of your personal digital manifesto"><div class="manifesto-head"><span>PERSONAL FIELD GUIDE</span><span>ISSUE 001 ↗</span></div><div class="manifesto-title">I AM<br>MORE<br>THAN <i>MY</i><br>FEED<span>.</span></div><div id="manifesto-rules" class="manifesto-rules"><span>01 / YOUR FIRST RULE GOES HERE</span><span>02 / YOUR SECOND RULE GOES HERE</span><span>03 / YOUR THIRD RULE GOES HERE</span></div><div class="manifesto-foot"><span>WHO AM I ONLINE?</span><span>MADE BY ME. NOT AN ALGORITHM.</span></div></div><div class="manifesto-actions"><button type="button" id="copy-code" class="black-button" disabled>COPY MY CODE <span aria-hidden="true">↗</span></button><button type="button" id="download-code" class="outline-button" disabled>SAVE AS SVG <span aria-hidden="true">↓</span></button></div><p class="privacy-note">Your choices stay in this page only. No account, no tracking, no upload.</p></div></div>
+    </section>
+
+    <section class="outro" aria-labelledby="outro-heading"><div class="outro-stars" aria-hidden="true">✳ ✳ ✳</div><p class="mono">THE END IS A BEGINNING.</p><h2 id="outro-heading">YOU ARE<br>NOT <em>CONTENT.</em></h2><p>You're a whole person. The internet only ever gets a glimpse.</p><a href="#top" class="outro-back">BACK TO THE BEGINNING ↗</a><span class="outro-number" aria-hidden="true">001</span></section>
+  </main>
+  <footer class="footer"><div><span class="wordmark footer-logo">WHO<span class="wordmark-orange">.</span>AM<span class="wordmark-orange">.</span>I<span class="wordmark-orange">?</span></span><p>AN INDEPENDENT, EDUCATIONAL DIGITAL STORY.<br>CONCEPT & CONTENT / AVI · 2026</p></div><div><h3>SOURCES & CONTEXT</h3><a href="https://www.pewresearch.org/internet/2025/04/22/teens-social-media-and-mental-health/" target="_blank" rel="noopener noreferrer">PEW RESEARCH CENTER ↗</a><a href="https://www.esafety.gov.au/young-people/pressures-from-social-media" target="_blank" rel="noopener noreferrer">ESAFETY: ONLINE PRESSURES ↗</a><a href="https://www.esafety.gov.au/about-us/industry-regulation/social-media-age-restrictions" target="_blank" rel="noopener noreferrer">ESAFETY: AGE RULES ↗</a></div><div><h3>THE SITE</h3><a href="#mirror">THE MIRROR</a><a href="#feed">THE FEED</a><a href="#messages">THE MESSAGES</a><a href="#code">YOUR CODE</a></div><div class="footer-last"><span>MADE TO MAKE YOU THINK.</span><span>NO TRACKERS. NO BACKEND. NO FAKE LIKES.</span><span>© STUDENT PROJECT 2026</span></div></footer>
+  <div class="sr-announcer visually-hidden" id="announcer" role="status" aria-live="polite"></div>
+</body>
+</html>
